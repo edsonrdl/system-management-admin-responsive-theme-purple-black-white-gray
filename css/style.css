@@ -610,7 +610,7 @@ color: var(--color-blue-violet);
 .container-all-products-add-products{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows:2fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
     width: 100%;
     height: 100%;
     gap: 10px;
@@ -751,7 +751,7 @@ input::placeholder {
 main .all-product-table {
     margin-top: 2rem;
     min-height: 20px;
-    max-height: 200px;
+    max-height: 150px;
     overflow: auto;
     background: var(--color-background);
     width: 100%;
@@ -865,11 +865,11 @@ main .supplier-all-product-table thead th {
 .item-button:hover {
     color: var(--color-dark-variant);
 }
-.create-product{
+.add-products,.create-product{
     height: 100%;
     width: 100%;
 }
-.create-product h1{
+.add-products h1,.create-product h1{
 font-size: var(--font-size-h1);
 color: var(--color-blue-violet);
 }
