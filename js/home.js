@@ -268,8 +268,8 @@ function productsearcherFunction(productsearcher) {
       <td>${productsearcher.client}</td>
       <td>${productsearcher.numberproduct}</td>
       <td class="${productsearcher.status === 'CANCELED' ? 'canceled' : productsearcher.status === 'PENDING' ? 'primary' : productsearcher.status === 'CONCLUDED' ? 'success' : 'success'}">${productsearcher.status}</td>
-      <td class="item-button" onclick="toggleItemproduct(${productsearcher.id})">Ver Itens</td>`;
-    
+      <td class="item-button" onclick="toggleItemproduct(${productsearcher.id})">Ver Itens</td>`
+      ;
     tr.innerHTML = trContent;
     tbodyAllproducts.appendChild(tr);
     console.log(tbodyAllproducts);

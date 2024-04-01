@@ -592,25 +592,34 @@ main .insigths small {
 }
 
 main .recent-products,
-main .all-products {
+main  {
     margin-top: 1rem;
     height: 100%;
     width: 100%;
     padding: 10px;
 }
-.container-all-products-add-products{
-    display: grid;
-    grid-row: 1fr 1fr;
-
-}
-.add-products{
+main .all-products {
     height: 100%;
     width: 100%;
 }
+main .all-products h1 {
+font-size: var(--font-size-h1);
+color: var(--color-blue-violet);
+}
+
+.container-all-products-add-products{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:2fr 1fr;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
 .table {
     margin-top: 2rem;
     min-height: 20px;
-    max-height: 250px;
+    max-height: 200px;
     overflow: auto;
     background: var(--color-background);
     width: 100%;
@@ -658,7 +667,6 @@ main .all-products table {
     cursor: pointer;
     color: var(--color-background);
     border-radius: 30px;
-
     background-color: var(--color-phlox);
 }
 
@@ -764,7 +772,14 @@ main table tbody td {
 }
 
 main .products-supplier {
+    width: 80%;
+    height: 80%;
     margin-top: 2rem;
+    padding: 10px;
+}
+
+main .products-supplier H2 {
+   color: var(--color-onys);
 }
 
 #items-product {
@@ -781,7 +796,7 @@ main .products-supplier {
 .supplier-all-product-table {
     margin-top: 2rem;
     min-height: 20px;
-    max-height: 400px;
+    max-height: 70px;
     overflow: auto;
     background: var(--color-background);
     width: 100%;
@@ -789,7 +804,6 @@ main .products-supplier {
     text-align: center;
     box-shadow: var(--box-shadow-light);
     transition: all 300ms ease;
-
 }
 
 main .products-all-product-table:hover {
@@ -808,8 +822,6 @@ main .products-supplier table {
     padding: var(--card-padding);
     text-align: center;
     border-collapse: collapse;
-
-
 }
 
 main .products-supplier table:hover {
@@ -852,6 +864,14 @@ main .supplier-all-product-table thead th {
 
 .item-button:hover {
     color: var(--color-dark-variant);
+}
+.create-product{
+    height: 100%;
+    width: 100%;
+}
+.create-product h1{
+font-size: var(--font-size-h1);
+color: var(--color-blue-violet);
 }
 
 main .right {
@@ -1094,9 +1114,6 @@ main .right {
         margin: 0;
     }
 
-    .all-products h2 {
-        font-size: 0.8rem;
-    }
 
     .recent-products thead th,
     .all-product-table thead th {
