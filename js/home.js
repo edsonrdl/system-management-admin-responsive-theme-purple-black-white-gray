@@ -71,123 +71,123 @@ createCircularProgress(".circular-progress-income", ".progress-value-income", va
 createCircularProgress(".circular-progress-canceled", ".progress-value-canceled", valueProgressCanceled);
 
  
-const orderToday = 'ordersToday.json';
-const tbodyOrdersRecentToday = document.querySelector('#tbody-orders-today');
+const productToday = 'productsToday.json';
+const tbodyproductsRecentToday = document.querySelector('#tbody-products-today');
 
-const fetchOrders = async () => {
+const fetchproducts = async () => {
   try {
-    const response = await fetch(orderToday);
+    const response = await fetch(productToday);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    const orders = await response.json();
-    return orders;
+    const products = await response.json();
+    return products;
   } catch (error) {
-    console.error('Error fetching orders:', error);
+    console.error('Error fetching products:', error);
     return null;
   }
 }
 
-const dashboardOrdersToday = async () => {
-  const orders = await fetchOrders();
+const dashboardproductsToday = async () => {
+  const products = await fetchproducts();
 
-  if (orders) {
-    const orderValidate=orders.orders;
-    tbodyOrdersRecentToday.innerHTML = '';
+  if (products) {
+    const productValidate=products.products;
+    tbodyproductsRecentToday.innerHTML = '';
 
-    orderValidate.forEach(order => {
+    productValidate.forEach(product => {
       const tr = document.createElement('tr');
       const trContent = `
-        <td>${order.client}</td>
-        <td>${order.numberOrder}</td>
-        <td class="${order.status === 'Cancelado' ? 'canceled' : order.status === 'Pendente' ? 'primary' : 'success'}">${order.status}</td>
+        <td>${product.client}</td>
+        <td>${product.numberproduct}</td>
+        <td class="${product.status === 'Cancelado' ? 'canceled' : product.status === 'Pendente' ? 'primary' : 'success'}">${product.status}</td>
       `;
       tr.innerHTML = trContent;
-      tbodyOrdersRecentToday.appendChild(tr);
+      tbodyproductsRecentToday.appendChild(tr);
 
     });
   } else {
-    console.error('Failed to load orders.');
+    console.error('Failed to load products.');
   }
 }
 
-dashboardOrdersToday();
+dashboardproductsToday();
 
 
-const tbodydashboardTopClientOrders = document.querySelector('#tbody-client-orders');
+const tbodydashboardTopClientproducts = document.querySelector('#tbody-client-products');
 
-const dashboardTopClientOrders = async () => {
-  const topClientorders = await fetchOrders();
+const dashboardTopClientproducts = async () => {
+  const topClientproducts = await fetchproducts();
 
-  if (topClientorders) {
-    const topClientorderValidate=topClientorders.topClientOrdes;
-    tbodydashboardTopClientOrders.innerHTML = '';
+  if (topClientproducts) {
+    const topClientproductValidate=topClientproducts.topClientOrdes;
+    tbodydashboardTopClientproducts.innerHTML = '';
 
-    topClientorderValidate.forEach(topClientorder => {
-      const numeroTelefone = topClientorder.numberPhone.toString(); 
+    topClientproductValidate.forEach(topClientproduct => {
+      const numeroTelefone = topClientproduct.numberPhone.toString(); 
       const numeroFormatado = `+1 ${numeroTelefone.slice(1, 4)}-${numeroTelefone.slice(4, 7)}-${numeroTelefone.slice(7)}`;
       const tr = document.createElement('tr');
       const trContent = `
-        <td>${topClientorder.client}</td>
+        <td>${topClientproduct.client}</td>
         <td>${numeroFormatado}</td>
-        <td>${topClientorder.email}</td>
-        <td>${topClientorder.amount}</td>
+        <td>${topClientproduct.email}</td>
+        <td>${topClientproduct.amount}</td>
         `;
       tr.innerHTML = trContent;
-      tbodydashboardTopClientOrders.appendChild(tr);
+      tbodydashboardTopClientproducts.appendChild(tr);
 
     });
   } else {
-    console.error('Failed to load orders.');
+    console.error('Failed to load products.');
   }
 }
 
-dashboardTopClientOrders();
+dashboardTopClientproducts();
 
 
 
-const tbodyAllOrders = document.querySelector('#tbody-orders-all');
-const ordersAllbtn=document.querySelector('#btn-all-orders');
+const tbodyAllproducts = document.querySelector('#tbody-products-all');
+const productsAllbtn=document.querySelector('#btn-all-products');
 
-const allOrdersClients=async()=>{
-  const allOrders = await fetchOrders();
-  if (allOrders) {
-    const allOrdersValidate=allOrders.orders;
-    tbodyAllOrders.innerHTML = ''
+const allproductsClients=async()=>{
+  const allproducts = await fetchproducts();
+  if (allproducts) {
+    const allproductsValidate=allproducts.products;
+    tbodyAllproducts.innerHTML = ''
 
-  allOrdersValidate.forEach(order => {
+  allproductsValidate.forEach(product => {
    const tr=document.createElement('tr');
    const trContent=`
-   <td>${order.client}</td>
-    <td>${order.numberOrder}</td>
-   <td class="${order.status === 'CANCELED' ? 'canceled' : order.status === 'PENDING' ? 'primary' : order.status === 'CONCLUDED' ? 'success' : 'success'}">${order.status}</td>
-   <td class="item-button" onclick="toggleItemOrder(${order.id})">Ver Itens</td>`;
+   <td>${product.client}</td>
+    <td>${product.numberproduct}</td>
+   <td class="${product.status === 'CANCELED' ? 'canceled' : product.status === 'PENDING' ? 'primary' : product.status === 'CONCLUDED' ? 'success' : 'success'}">${product.status}</td>
+   <td class="item-button" onclick="toggleItemproduct(${product.id})">Ver Itens</td>`;
     tr.innerHTML=trContent;
-    tbodyAllOrders.appendChild(tr);
+    tbodyAllproducts.appendChild(tr);
 
   });
   
   }
 }
-ordersAllbtn.addEventListener('click',allOrdersClients);
+productsAllbtn.addEventListener('click',allproductsClients);
 
 
-const toggleItemOrder = async (idOrderClient)=> {
-  const idOrder = idOrderClient;
-  const allOrdersItems = await fetchOrders();
+const toggleItemproduct = async (idproductClient)=> {
+  const idproduct = idproductClient;
+  const allproductsItems = await fetchproducts();
   
-  if (allOrdersItems && idOrder) {
-    const allOrdersItemsValidate = allOrdersItems.orders;
+  if (allproductsItems && idproduct) {
+    const allproductsItemsValidate = allproductsItems.products;
 
 
-    const orderItems= allOrdersItemsValidate.find(order => order.id === idOrder); 
-    const itens=orderItems.itens;
+    const productItems= allproductsItemsValidate.find(product => product.id === idproduct); 
+    const itens=productItems.itens;
 
 
 
-    const totalOrderValue = sumItemValues(orderItems.itens);
-    const formattedTotal = formatCurrency(totalOrderValue);
-    loaditemsOrderClient(itens,formattedTotal);
+    const totalproductValue = sumItemValues(productItems.itens);
+    const formattedTotal = formatCurrency(totalproductValue);
+    loaditemsproductClient(itens,formattedTotal);
   }
 
 };
@@ -206,27 +206,27 @@ const sumItemValues = (items) => {
 };
 
 
-const tbodyItemsOrder = document.querySelector('#tbody-orders-items-all');
+const tbodyItemsproduct = document.querySelector('#tbody-products-items-all');
 
-function loaditemsOrderClient(ItemsOrderClient, totalValueOrder) {
-  console.log(ItemsOrderClient);
-  console.log(totalValueOrder);
-  tbodyItemsOrder.innerHTML = '';
+function loaditemsproductClient(ItemsproductClient, totalValueproduct) {
+  console.log(ItemsproductClient);
+  console.log(totalValueproduct);
+  tbodyItemsproduct.innerHTML = '';
 
-  if (ItemsOrderClient.length > 0) {
-    for (const itemOrder of ItemsOrderClient) {
-      console.log(itemOrder);
-      const totalOrderValeu = document.querySelector('#total-order-value');
-      totalOrderValeu.innerText=`Total do Pedido ${totalValueOrder}`;
+  if (ItemsproductClient.length > 0) {
+    for (const itemproduct of ItemsproductClient) {
+      console.log(itemproduct);
+      const totalproductValeu = document.querySelector('#total-product-value');
+      totalproductValeu.innerText=`Total do Pedido ${totalValueproduct}`;
 
       const tr = document.createElement('tr');
       const trContent = `
-        <td>${itemOrder.name}</td>
-        <td>${itemOrder.value}</td>
-        <td>${itemOrder.quantity}</td>`;
+        <td>${itemproduct.name}</td>
+        <td>${itemproduct.value}</td>
+        <td>${itemproduct.quantity}</td>`;
       tr.innerHTML = trContent;
-      tbodyItemsOrder.appendChild(tr);
-      console.log(tbodyItemsOrder);
+      tbodyItemsproduct.appendChild(tr);
+      console.log(tbodyItemsproduct);
 
     }
   } else {
@@ -237,42 +237,42 @@ function loaditemsOrderClient(ItemsOrderClient, totalValueOrder) {
       <td>Vazio</td>
       <td>Total do pedido : vazio</td>`;
     tr.innerHTML = trContent;
-    tbodyItemsOrder.appendChild(tr);
+    tbodyItemsproduct.appendChild(tr);
   }
 };
 
 
-const searchOrderNumber = async () => {
-  const inputOrder = document.getElementById('input-pedido');
-  const numberOrder = inputOrder.value;
-  const allOrdersResponse = await fetchOrders();
+const searchproductNumber = async () => {
+  const inputproduct = document.getElementById('input-product');
+  const numberproduct = inputproduct.value;
+  const allproductsResponse = await fetchproducts();
   
-  if (allOrdersResponse && numberOrder) {
-    const allOrders = allOrdersResponse.orders;
-    const orderSearcher = allOrders.find(order => order.numberOrder == numberOrder);
+  if (allproductsResponse && numberproduct) {
+    const allproducts = allproductsResponse.products;
+    const productsearcher = allproducts.find(product => product.numberproduct == numberproduct);
 
-    orderSearcher && orderSearcherFunction(orderSearcher);
+    productsearcher && productsearcherFunction(productsearcher);
   }
 };
 
-function orderSearcherFunction(orderSearcher) {
-  console.log(orderSearcher);
+function productsearcherFunction(productsearcher) {
+  console.log(productsearcher);
 
-  if (orderSearcher) {
-    const totalOrderValeu = document.querySelector('#total-order-value');
-    totalOrderValeu.innerText='';
-    tbodyAllOrders.innerHTML = '';
-    tbodyItemsOrder.innerHTML = '';
+  if (productsearcher) {
+    const totalproductValeu = document.querySelector('#total-product-value');
+    totalproductValeu.innerText='';
+    tbodyAllproducts.innerHTML = '';
+    tbodyItemsproduct.innerHTML = '';
     const tr = document.createElement('tr');
     const trContent = `
-      <td>${orderSearcher.client}</td>
-      <td>${orderSearcher.numberOrder}</td>
-      <td class="${orderSearcher.status === 'CANCELED' ? 'canceled' : orderSearcher.status === 'PENDING' ? 'primary' : orderSearcher.status === 'CONCLUDED' ? 'success' : 'success'}">${orderSearcher.status}</td>
-      <td class="item-button" onclick="toggleItemOrder(${orderSearcher.id})">Ver Itens</td>`;
+      <td>${productsearcher.client}</td>
+      <td>${productsearcher.numberproduct}</td>
+      <td class="${productsearcher.status === 'CANCELED' ? 'canceled' : productsearcher.status === 'PENDING' ? 'primary' : productsearcher.status === 'CONCLUDED' ? 'success' : 'success'}">${productsearcher.status}</td>
+      <td class="item-button" onclick="toggleItemproduct(${productsearcher.id})">Ver Itens</td>`;
     
     tr.innerHTML = trContent;
-    tbodyAllOrders.appendChild(tr);
-    console.log(tbodyAllOrders);
+    tbodyAllproducts.appendChild(tr);
+    console.log(tbodyAllproducts);
   }
 }
 

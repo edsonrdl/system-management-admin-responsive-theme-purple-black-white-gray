@@ -59,18 +59,14 @@
                         class="material-symbols-outlined">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
-                <a onclick="showContentMain('orders-content')" href="#"><span
-                        class="material-symbols-outlined">orders</span>
-                    <h3>Pedidos</h3>
+                <a onclick="showContentMain('products-supplier-content')" href="#"><span class="material-symbols-outlined">inventory_2</span>
+                    <h3>Produtos</h3>
                 </a>
                 <a href="#"><span class="material-symbols-outlined">person</span>
-                    <h3>Clients</h3>
+                    <h3>Clientes</h3>
                 </a>
                 <a href="#"><span class="material-symbols-outlined">mail</span>
                     <h3>Mensagens</h3> <span class="message-count">2</span>
-                </a>
-                <a href="#"><span class="material-symbols-outlined">inventory_2</span>
-                    <h3>Produtos</h3>
                 </a>
             </div>
         </aside>
@@ -228,18 +224,18 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="container-recent-orders-top-client">
-                        <div class="recent-orders table">
-                            <h2>Pedidos recentes</h2>
+                    <div class="container-recent-products">
+                        <div class="recent-products table">
+                            <h2>Produtos</h2>
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Cliente</th>
-                                        <th>Número do Pedido</th>
-                                        <th>Status</th>
+                                        <th>Nome</th>
+                                        <th>Valor</th>
+                                        <th>Quantidade de Itens</th>
+                                        <th>Quantidade Mínima</th>
                                     </tr>
-                                <tbody id="tbody-orders-today">
+                                <tbody id="tbody-products-today">
                                 </tbody>
                                 </thead>
                             </table>
@@ -247,12 +243,31 @@
                     </div>
                 </div>
                 <div class="right">
-                 
                     <div class="products-analytics">
                         <div class="content-title">
-                            <h2>Produtos mais vendidos</h2>
+                            <h1>Produtos mais vendidos</h1>
                         </div>
                         <div class="content-products">
+                            <div class="products online">
+                                <div class="img-produtcs">
+                                    <img src="./imagens/camera-510530_640.jpg" alt="">
+                                </div>
+                                <div class="description-product">
+                                    <h2>Câmera fotográfica</h2>
+                                    <p><b>Quantidade de unidades: </b>93</p>
+                                    <p><b>Unidades restantes: </b>50</p>
+                                </div>
+                            </div>
+                            <div class="products online">
+                                <div class="img-produtcs">
+                                    <img src="./imagens/camera-510530_640.jpg" alt="">
+                                </div>
+                                <div class="description-product">
+                                    <h2>Câmera fotográfica</h2>
+                                    <p><b>Quantidade de unidades: </b>93</p>
+                                    <p><b>Unidades restantes: </b>50</p>
+                                </div>
+                            </div>
                             <div class="products online">
                                 <div class="img-produtcs">
                                     <img src="./imagens/camera-510530_640.jpg" alt="">
@@ -289,50 +304,55 @@
                     </div>
                 </div>
             </div>
-            <div id="orders-content" class="main-contant disabled-content">
-                <div class="all-orders">
-                    <h1>Pedidos</h1>
-                    <div class="top-all-orders">
-                        <h2>Selecione a data dos pedidos</h2>
-                        <input type="date" class="dateFilter" onchange="filterOrderCalendar(this.value)">
-                    </div>
-                    <div class="container-get-btn-all-get-btn-number">
-                        <div class="button-all-orders">
-                            <button id="btn-all-orders">Buscar Pedidos</button>
+            <div id="products-supplier-content" class="main-contant disabled-content">
+                <div class="container-all-products-add-products">
+                    <div class="all-products">
+                        <h1>Produtos</h1>
+                        <div class="container-get-btn-all-get-btn-number">
+                            <div class="button-all-products">
+                                <button id="btn-all-products">Buscar produtos</button>
+                            </div>
+                            <div class="button-filter-product-number">
+                                <input type="number" id="input-product" placeholder="Digite o número do produto">
+                                <span onclick="searchproductNumber()" class="material-symbols-outlined">
+                                    search
+                                </span>
+                            </div>
                         </div>
-                        <div class="button-filter-order-number">
-                            <input type="number" id="input-pedido" placeholder="Digite o número do pedido">
-                            <span onclick="searchOrderNumber()" class="material-symbols-outlined">
-                                search
-                            </span>
+                        <div class="all-product-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Número de identificação</th>
+                                        <th>Nome</th>
+                                        <th>Valor</th>
+                                        <th>Quantidade de itens</th>
+                                        <th>Fornecedor</th>
+                                    </tr>
+                                <tbody id="tbody-products-all">
+                                </tbody>
+                                </thead>
+                            </table>
                         </div>
                     </div>
-                    <div class="all-order-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>CLIENTE</th>
-                                    <th>NÚMERO DO PEDIDO</th>
-                                    <th>Status</th>
-                                </tr>
-                            <tbody id="tbody-orders-all">
-                            </tbody>
-                            </thead>
-                        </table>
+                    <div class="add-products">
+                        <h1>Adicionar produtos</h1>
+                        <div class="container-add-products-crud">
+
+                        </div>
                     </div>
+
                 </div>
-                <div class="productss-order">
-                    <h1>Itens do Pedido</h1>
-                    <div id="total-order-value"></div>
-                    <div class="productss-all-order-table">
+                <div class="products-supplier">
+                    <h1>Fornecedores</h1>
+                    <div id="total-product-value"></div>
+                    <div class="supplier-all-product-table">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Nome do item</th>
-                                    <th>Valor</th>
-                                    <th>Quantidade</th>
+                                    <th>Nome</th>
                                 </tr>
-                            <tbody id="tbody-orders-items-all">
+                            <tbody id="tbody-products-items-all">
                             </tbody>
                             </thead>
                         </table>
