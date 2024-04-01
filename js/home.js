@@ -276,3 +276,21 @@ function productsearcherFunction(productsearcher) {
   }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  const decrementButton = document.querySelector('.decrement');
+  const incrementButton = document.querySelector('.increment');
+  const quantityInput = document.getElementById('quantity');
+
+  decrementButton.addEventListener('click', function() {
+    let currentValue = parseInt(quantityInput.value);
+    if (currentValue > 0) {
+      quantityInput.value = currentValue - 1;
+    }
+  });
+
+  incrementButton.addEventListener('click', function() {
+    let currentValue = parseInt(quantityInput.value);
+    quantityInput.value = currentValue + 1;
+  });
+});
+

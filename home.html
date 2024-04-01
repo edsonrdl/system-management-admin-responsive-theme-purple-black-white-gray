@@ -56,11 +56,12 @@
         <aside>
             <div class="sidebar">
                 <a onclick="showContentMain('dashboard-content')" href="#"><span class="material-symbols-outlined">
-                    team_dashboard
+                        team_dashboard
                     </span>
                     <h3>Dashboard</h3>
                 </a>
-                <a onclick="showContentMain('products-supplier-content')" href="#"><span class="material-symbols-outlined">inventory_2</span>
+                <a onclick="showContentMain('products-supplier-content')" href="#"><span
+                        class="material-symbols-outlined">inventory_2</span>
                     <h3>Produtos</h3>
                 </a>
                 <a href="#"><span class="material-symbols-outlined">person</span>
@@ -122,7 +123,7 @@
                                         <div class="bar-section bar-quin">
                                             <div style="height: 33px;" class="bar">
                                                 <p>33</p>
-    
+
                                             </div>
                                             <div class="weekly-name">
                                                 <h2>Qui</h2>
@@ -131,7 +132,7 @@
                                         <div class="bar-section bar-sex">
                                             <div style="height: 47px;" class="bar">
                                                 <p>47</p>
-    
+
                                             </div>
                                             <div class="weekly-name">
                                                 <h2>Sex</h2>
@@ -254,7 +255,7 @@
                                     <img src="./imagens/camera-510530_640.jpg" alt="">
                                 </div>
                                 <div class="description-product">
-                                    <h2>Câmera fotográfica</h2>
+                                    <h2>Nome do produto</h2>
                                     <p><b>Quantidade de unidades: </b>93</p>
                                     <p><b>Unidades restantes: </b>50</p>
                                 </div>
@@ -264,7 +265,7 @@
                                     <img src="./imagens/camera-510530_640.jpg" alt="">
                                 </div>
                                 <div class="description-product">
-                                    <h2>Câmera fotográfica</h2>
+                                    <h2>Nome do produto</h2>
                                     <p><b>Quantidade de unidades: </b>93</p>
                                     <p><b>Unidades restantes: </b>50</p>
                                 </div>
@@ -274,7 +275,7 @@
                                     <img src="./imagens/camera-510530_640.jpg" alt="">
                                 </div>
                                 <div class="description-product">
-                                    <h2>Câmera fotográfica</h2>
+                                    <h2>Nome do produto</h2>
                                     <p><b>Quantidade de unidades: </b>93</p>
                                     <p><b>Unidades restantes: </b>50</p>
                                 </div>
@@ -284,7 +285,7 @@
                                     <img src="./imagens/earphone-3093921_1280.jpg" alt="">
                                 </div>
                                 <div class="description-product">
-                                    <h2>Fone de ouvido com fio</h2>
+                                    <h2>Nome do produto</h2>
                                     <p><b>Quantidade de unidades: </b>60</p>
                                     <p><b>Unidades restantes: </b>15</p>
                                 </div>
@@ -294,7 +295,7 @@
                                     <img src="./imagens/microphone-8436595_640.jpg" alt="">
                                 </div>
                                 <div class="description-product">
-                                    <h2>Microfone</h2>
+                                    <h2>Nome do produto</h2>
                                     <p><b>Quantidade de unidades: </b>43</p>
                                     <p><b>Unidades restantes: </b>7</p>
                                 </div>
@@ -339,13 +340,58 @@
                     <div class="add-products">
                         <h1>Adicionar produtos</h1>
                         <div class="container-add-products">
-                            
-
+                            <div class="content-add-products">
+                                <p>Id</p>
+                                <p>Nome</p>
+                                <p>Quantidade</p>
+                                <p>Quantidade mínima</p>
+                                <div class="container-input-amount-add-products">
+                                    <input id="quantity" type="number" value="0" min="0" max="100" step="1">
+                                    <button class="decrement"><span class="material-symbols-outlined">
+                                        remove
+                                        </span></button>
+                                    <button class="increment"><span class="material-symbols-outlined">
+                                        add
+                                        </span></button>
+                                    <button class="btn-add-confirm" type="submit">Confirmar</button>
+                                </div>
+                             
+                            </div>
                         </div>
                     </div>
                     <div class="create-product">
                         <h1>Criar produto</h1>
                         <div class="container-create-products-crud">
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="">Nome</label>
+                                    <input type="text" placeholder="Nome produto">
+                                </div>
+                                <div>
+                                    <label for="">Valor</label>
+                                    <input type="number"   min="0" step="0.01" required>
+                                </div>
+                                <div>
+                                    <label for="" >Descrição</label>
+                                    <input type="text" placeholder="Descreva o produto">
+                                </div>
+                                <div>
+                                    <label for="">Quantidade</label>
+                                    <input type="number">
+                                </div>
+                                <div>
+                                    <label for="">Mínimo</label>
+                                    <input type="number">
+                                </div>
+                                <select id="selectOption" required>
+                                    <option value="" disabled selected>Selecione um fornecedor</option>
+                                    <option value="aliexpress">ALIXPRESS</option>
+                                    <option value="amazon">AMAZON</option>
+                                    <option value="mercado-livre">MERCADO LIVRE</option>
+                                    <option value="shopee">SHOPEE</option>
+                                </select>
+                                <button class="btn-confirm-create-product" type="submit">Confirmar</button>
+                            </form>
 
                         </div>
                     </div>

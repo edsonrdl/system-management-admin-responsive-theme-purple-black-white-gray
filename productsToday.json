@@ -2,7 +2,7 @@
   "products": [
     {
       "id":23,
-      "client": "Letícia",
+      "client": "Gps",
       "numberOrder": 856,
       "status": "Concluído",
       "itens":[
@@ -16,7 +16,7 @@
     },
     {
       "id":3,
-      "client": "Luís",
+      "client": "Cabo",
       "numberOrder": 569,
       "status": "Concluído",
       "itens":[
@@ -30,7 +30,7 @@
     },
     {
       "id":54,
-      "client": "Juliana",
+      "client": "Antena",
       "numberOrder": 423,
       "status": "Concluído",
       "itens":[
@@ -44,7 +44,7 @@
     },
     {
       "id":78,
-      "client": "João",
+      "client": "Sensor",
       "numberOrder": 212,
       "status": "Pendente",
       "itens":[
@@ -63,7 +63,7 @@
     },
     {
       "id":787,
-      "client": "Ana",
+      "client": "Sensor",
       "numberOrder": 645,
       "status": "Concluído",
       "itens":[
@@ -82,7 +82,7 @@
     },
     {
       "id":4,
-      "client": "Alice",
+      "client": "Sensor",
       "numberOrder": 432,
       "status": "Concluído",
       "itens":[
@@ -96,7 +96,7 @@
     },
     {
       "id":3,
-      "client": "Gaby",
+      "client": "Sensor",
       "numberOrder": 423,
       "status": "Cancelado",
       "itens":[
@@ -110,7 +110,7 @@
     },
     {
       "id":27,
-      "client": "Evelyn",
+      "client": "Sensor",
       "numberOrder": 733,
       "status": "Concluído",
       "itens":[

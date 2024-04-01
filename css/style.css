@@ -610,7 +610,7 @@ color: var(--color-blue-violet);
 .container-all-products-add-products{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-rows: 4fr 2fr 3fr;
     width: 100%;
     height: 100%;
     gap: 10px;
@@ -868,11 +868,92 @@ main .supplier-all-product-table thead th {
 .add-products,.create-product{
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .add-products h1,.create-product h1{
 font-size: var(--font-size-h1);
 color: var(--color-blue-violet);
+height: auto;
+width: 100%;
 }
+.container-add-products{
+    min-height: 20px;
+    max-height: 100px;
+    overflow: auto;
+    background: var(--color-background);
+    border-radius: var(--card-border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow-light);
+    transition: all 300ms ease;
+}
+.content-add-products{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.container-input-amount-add-products{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.content-add-products p{
+    font-size: 1rem;
+    color: var(--color-onys);
+    font-weight: 400;
+}
+.container-add-products input[type="number"] {
+    width: 50px;
+    text-align: center;
+  }
+.container-add-products input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+  
+  .container-add-products .material-symbols-outlined {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border: none;
+    background:transparent;
+    color:var(--color-lavender-floral);
+  }
+  .container-add-products .material-symbols-outlined:hover {
+    color:var(--color-warning);
+  }
+  
+  .container-add-products button {
+    padding: 5px 7px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    background:transparent;
+    color:var(--color-lavender-floral);
+    border-radius: 3px;
+    transition: background-color 0.3s;
+  }
+  .container-add-products .btn-add-confirm {
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    background:transparent;
+    color:var(--color-lavender-floral);
+    border-radius: 3px;
+    transition: background-color 0.3s;
+  }
+  
+  .container-add-products button:hover {
+    color:var(--color-success);
+  }   
 
 main .right {
     padding: 10px;
@@ -957,9 +1038,52 @@ main .right {
 .description-product p {
     font-size: 0.8rem;
     margin: 5px 0px 0px 5px;
-
     color: var(--color-back);
 }
+
+.create-product .container-create-products-crud{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    min-height: 70px;
+    max-height: 70px;
+    overflow: auto;
+    background: var(--color-background);
+    border-radius: var(--card-border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow-light);
+    transition: all 300ms ease;
+}
+.create-product .container-create-products-crud form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-create-products-crud label{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-onys);
+}
+.container-create-products-crud  input[type="number"]{
+    width: 50px;
+    text-align: center;
+  }
+.container-create-products-crud   input[type="text"]{
+    width: auto;
+    text-align: center;
+}
+.container-create-products-crud   input::placeholder{
+ font-size: 0.9rem;
+ font-weight: 600;
+ color: var(--color-onys);
+ opacity: 60%;
+}
+
+
 
 @media (max-width:1470px) {
     .container {
