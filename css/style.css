@@ -6,6 +6,7 @@
     --color-success: #41f1b6;
     --color-warning: #ffbb55;
     --color-background: #ffffff;
+    --color-white: #ffffff;
     --color-shadow: #161616;
     --color-onys: #3d3d3d;
     --color-lavender-floral: #c478f3;
@@ -21,19 +22,28 @@
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
     --border-radius-2: 30px;
+    --header-background: linear-gradient(90deg, #5a009e 0%, #c478f3 100%);
+    --sidebar-background: linear-gradient(90deg, #c478f3 0%, #ffffff 100%);
     --box-shadow-light: 0 1rem 2rem var(--color-light);
-    --box-shadow-dark: 0 1rem 2rem var();
+    --box-shadow-dark: 0 1rem 2rem var(--color-shadow);
     --box-shadow-violet: 0 0.5rem 1rem var(--color-blue-violet);
     /* background: linear-gradient(90deg, #3e3e3e 0%, #1b1b1b 100%); */
 }
 
 .dark-theme-variables{
-    --color-background: linear-gradient(90deg, rgba(62, 62, 62, 1) 0%, rgba(0, 0, 0, 1) 100%);
-    --color-background: #202528;
+    --color-background: linear-gradient(90deg, #3e3e3e 0%, rgba(0, 0, 0, 1) 100%);
+    --header-background: linear-gradient(90deg, #3e3e3e 0%, rgba(0, 0, 0, 1) 100%);
+    --sidebar-background: linear-gradient(90deg, #5a009e 0%, transparent 100%);
+    --color-lavender-floral: #991AE6;
+    --color-roxo-profundo: #edeffd;
+    --color-white: #202528;
+    --color-back: #edeffd;
     --color-dark: #edeffd;
+    --color-onys: #edeffd;
     --color-dark-variant: #05802a;
     --color-ligth: rgba(0, 0, 0, 0.4);
-    --box-shadow: 0 2rem 3rem var(--color-light)
+    --box-shadow-violet: 0 0.5rem 1rem var(--color-shadow);
+    --box-shadow-light: 0 2rem 3rem var(--color-shadow)
 }
 
 * {
@@ -107,7 +117,7 @@ header {
     width: 100%;
     grid-area: header;
     padding: 0px 40px 0px 40px;
-    background: linear-gradient(90deg, #5a009e 0%, #c478f3 100%);
+    background: var( --header-background);
 }
 .container-logo-asi-code{
     gap: 10px;
@@ -267,10 +277,9 @@ aside .sidebar a.active span {
 }
 
 aside .sidebar a:hover {
-    color: var(--color-blue-violet);
     border-top-left-radius:var(--border-radius-1);
     border-bottom-left-radius:var(--border-radius-1);
-    background: linear-gradient(90deg, #c478f3 0%, #ffffff 100%);
+    background: var(--sidebar-background);
 }
 
 aside .sidebar a:hover span {
@@ -319,7 +328,7 @@ color: var(--color-blue-violet);
 }
 .title-date .date {
     display: inline-block;
-    background: var(--color-background);
+    background:transparent;
     border-radius: var(--border-radius-1);
     padding: 0.3rem 1.3rem;
 }
@@ -440,7 +449,7 @@ main .insigths {
 main .insigths>div {
     display: flex;
     flex-direction: column;
-    background: var(--color-background);
+    background:transparent;
     padding: 10px;
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow-light);
@@ -543,7 +552,7 @@ main .insigths p {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: var(--color-background);
+    background-color: var(--color-white);
 }
 
 main .insigths .progress .progress-value-sales,
@@ -639,7 +648,7 @@ color: var(--color-blue-violet);
     min-height: 20px;
     max-height: 200px;
     overflow: auto;
-    background: var(--color-background);
+    background:transparent;
     width: 100%;
     border-radius: var(--card-border-radius);
     text-align: center;
@@ -769,7 +778,7 @@ main .all-product-table {
     min-height: 20px;
     max-height: 150px;
     overflow: auto;
-    background: var(--color-background);
+    background: transparent;
     width: 100%;
     border-radius: var(--card-border-radius);
     text-align: center;
@@ -816,7 +825,7 @@ main .products-supplier h2 {
     min-height: 20px;
     max-height: 70px;
     overflow: auto;
-    background: var(--color-background);
+    background: transparent;
     width: 100%;
     border-radius: var(--card-border-radius);
     text-align: center;
@@ -834,8 +843,8 @@ main .products-supplier h2 {
 }
 
 main .products-supplier table {
-    background: transparent;
     width: 100%;
+    background: transparent;
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     text-align: center;
@@ -901,7 +910,7 @@ width: 100%;
     min-height: 20px;
     max-height: 100px;
     overflow: auto;
-    background: var(--color-background);
+    background: transparent;
     border-radius: var(--card-border-radius);
     text-align: center;
     box-shadow: var(--box-shadow-light);
@@ -925,6 +934,7 @@ width: 100%;
     font-weight: 400;
 }
 .container-add-products input[type="number"] {
+    color: var(--color-back);
     width: 50px;
     background: transparent;
     text-align: center;
@@ -935,8 +945,6 @@ input[type="number"]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0; 
 }
-
-  
   .container-add-products .material-symbols-outlined {
     cursor: pointer;
     font-weight: 600;
@@ -1018,7 +1026,7 @@ main .right {
   
 }
 .right .products-analytics .products {
-    background: var(--color-background);
+    background: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1059,7 +1067,7 @@ main .right {
     min-height: 70px;
     height: 100%;
     overflow: auto;
-    background: var(--color-background);
+    background:transparent;
     text-align: center;
     transition: all 300ms ease;
 }
@@ -1069,6 +1077,7 @@ main .right {
   
 }
 .create-product .container-create-products-crud form{
+
     height: 100%;
     width: 100%;
     display: flex;
@@ -1093,7 +1102,9 @@ main .right {
 .container-create-products-crud   input[type="text"]{
     width: 100%;
     text-align: center;
+    background: transparent;
     border: solid 1px #3d3d3d;
+    color: var(--color-back);
     border-radius: var(--border-radius-2);
     box-shadow: var(--box-shadow-light);
     transition: all 300ms ease;
@@ -1112,6 +1123,8 @@ main .right {
     width: 30px;
     text-align: center;
     border: solid 1px #3d3d3d;
+    color: var(--color-back);
+    background: transparent;
     border-radius: var(--border-radius-2);
     box-shadow: var(--box-shadow-light);
     transition: all 300ms ease;
@@ -1129,13 +1142,17 @@ input[type="number"]::-webkit-outer-spin-button {
     text-align: center;
     font-weight: 600;
     font-family: var(--font-family-manrope);
-    color: var(--color-onys);
+    color: var(--color-back);
     border: solid 1px #3d3d3d;
     border-radius: var(--border-radius-2);
-    background: var(--color-background);
+    background: transparent;
     cursor: pointer;
     width: 80%;
     font-size: var(--font-size-2);
+}
+.create-form-product select option{
+  color: var(--color-back);
+  background-color: var(--color-white);
 }
 .btn-confirm-create-product{
     padding: 5px 15px;
