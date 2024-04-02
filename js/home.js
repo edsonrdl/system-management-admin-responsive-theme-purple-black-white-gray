@@ -143,6 +143,7 @@ const allproducts = async () => {
     tbodyAllproducts.innerHTML = "";
 
     allproductsValidate.forEach((product) => {
+      let suppliers=product.supplier ;
       const tr = document.createElement("tr");
       const trContent = `
    <td>${product.id}</td>
@@ -151,17 +152,17 @@ const allproducts = async () => {
    <td>${product.description}</td>
    <td>${product.amount}</td>
    <td>${product.amountMinimum}</td>
-   <td  onclick="toggleSuppler(${product.supplier})" class="${
-      product.supplier === "ALIEXPRESS"
+   <td  onclick="toggleSuppler(${suppliers.id})" class="${
+    suppliers.name === "ALIEXPRESS"
         ? "aliexpress"
-        : product.supplier === "AMAZON"
+        : suppliers.name === "AMAZON"
         ? "amazon"
-        : product.supplier === "MERCADO LIVRE"
+        : suppliers.name === "MERCADO LIVRE"
         ? "mercado-livre"
-        : product.supplier === "SHOPEE"
+        : suppliers.name === "SHOPEE"
         ? "shopee"
         : "warning"
-    }">${product.supplier}</td>`;
+    }">${suppliers.name}</td>`;
       tr.innerHTML = trContent;
       tbodyAllproducts.appendChild(tr);
     });
@@ -171,19 +172,29 @@ productsAllbtn.addEventListener("click", allproducts);
 
 const toggleSuppler = async (id) => {
   const idSupplier = id;
-  const allproductsItems = await fetchproducts();
+  const allproducts = await fetchproducts();
+  
+  console.log("allproducts"+ allproducts);
 
-  if (allproductsItems && idSupplier) {
-    const allproductsItemsValidate = allproductsItems.products;
+  if (allproducts && idSupplier) {
+    const allproductsValidate = allproducts.products;
+    allproductsValidate.forEach(async (product) => {
+      let supplier=product.supplier;
 
-    const productItems = allproductsItemsValidate.find(
-      (product) => product.id === idSupplier
-    );
-    const itens = productItems.itens;
+      const productItems = allproductsValidate.find(
+        (product) => product.id === idSupplier
+      );
+      
+      const itens = productItems.itens;
+  
+      const totalproductValue = sumItemValues(productItems.itens);
+      const formattedTotal = formatCurrency(totalproductValue);
+      loaditemsproductClient(itens, formattedTotal);
 
-    const totalproductValue = sumItemValues(productItems.itens);
-    const formattedTotal = formatCurrency(totalproductValue);
-    loaditemsproductClient(itens, formattedTotal);
+
+      });
+
+   
   }
 };
 const formatCurrency = (value) => {
