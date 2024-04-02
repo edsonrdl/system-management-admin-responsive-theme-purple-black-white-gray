@@ -834,13 +834,13 @@ main .products-supplier h2 {
     background: transparent;
 }
 
-#total-product-value {
+#supplier-name {
     font-size: 1rem;
     margin: 5px;
     color: var(--color-dim-gray);
 }
 
-.supplier-all-product-table {
+.supplier-description {
     margin-top: 2rem;
     min-height: 20px;
     max-height: 70px;
@@ -875,7 +875,7 @@ main .products-supplier table:hover {
     box-shadow: none;
 }
 
-main .supplier-all-product-table thead th {
+main .supplier-description thead th {
     color: var(--color-onys);
     font-size: var(--font-size-3);
     font-family: var(--font-family-manrope);
@@ -886,32 +886,29 @@ main .supplier-all-product-table thead th {
     z-index: 1;
 }
 
-.supplier-all-product-table tbody {
+.supplier-description tbody {
     overflow-y: auto;
     position: relative;
 }
 
-
-
-
-.products-button {
+.supplier-button {
     cursor: pointer;
     color: var(--color-secundary);
 }
 
-.products-button:hover {
+.supplier-button:hover {
     color: var(--color-secundary-hover);
 
 }
 
-.item-button {
+.supplier-button {
     cursor: pointer;
-    color: var(--color-phlox);
 }
 
-.item-button:hover {
-    color: var(--color-dark-variant);
+.supplier-button:hover {
+    color: var(--color-blue-violet);
 }
+
 .add-products,.create-product{
     height: 100%;
     width: 100%;

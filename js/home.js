@@ -151,16 +151,16 @@ const allproducts = async () => {
    <td>${product.description}</td>
    <td>${product.amount}</td>
    <td>${product.amountMinimum}</td>
-    <td class="${
+    <td onclick="toggleSuppler(${product.supplier}) class="${
       product.supplier === "ALIEXPRESS"
-        ? "aliexpress"
+        ? "aliexpress supplier-button"
         : product.supplier === "AMAZON"
-        ? "amazon"
+        ? "amazon supplier-button"
         : product.supplier === "MERCADO LIVRE"
-        ? "mercado-livre"
+        ? "mercado-livre supplier-button"
         : product.supplier === "SHOPEE"
-        ? "shopee"
-        : "warning"
+        ? "shopee supplier-button"
+        : "warning supplier-button"
     }">${product.supplier}</td>`;
       tr.innerHTML = trContent;
       tbodyAllproducts.appendChild(tr);
@@ -169,7 +169,7 @@ const allproducts = async () => {
 };
 productsAllbtn.addEventListener("click", allproducts);
 
-const toggleItemproduct = async (idproductClient) => {
+const toggleSuppler = async (idproductClient) => {
   const idproduct = idproductClient;
   const allproductsItems = await fetchproducts();
 
@@ -199,7 +199,7 @@ const sumItemValues = (items) => {
   }, 0);
 };
 
-const tbodyItemsproduct = document.querySelector("#tbody-products-items-all");
+const tbodyItemsproduct = document.querySelector("#tbody-supplier-description");
 
 function loaditemsproductClient(ItemsproductClient, totalValueproduct) {
   console.log(ItemsproductClient);
@@ -208,18 +208,14 @@ function loaditemsproductClient(ItemsproductClient, totalValueproduct) {
 
   if (ItemsproductClient.length > 0) {
     for (const itemproduct of ItemsproductClient) {
-      console.log(itemproduct);
-      const totalproductValeu = document.querySelector("#total-product-value");
-      totalproductValeu.innerText = `Total do Pedido ${totalValueproduct}`;
+      const totalproductValeu = document.querySelector("#supplier-name");
+      totalproductValeu.innerText = `${ItemsproductClient.name}`;
 
       const tr = document.createElement("tr");
       const trContent = `
-        <td>${itemproduct.name}</td>
-        <td>${itemproduct.value}</td>
-        <td>${itemproduct.quantity}</td>`;
+        <td>${ItemsproductClient.description}</td>`;
       tr.innerHTML = trContent;
       tbodyItemsproduct.appendChild(tr);
-      console.log(tbodyItemsproduct);
     }
   } else {
     const tr = document.createElement("tr");
@@ -250,7 +246,7 @@ const searchproductNumber = async () => {
 
 function productsearcherFunction(productsearcher) {
   if (productsearcher) {
-    const totalproductValeu = document.querySelector("#total-product-value");
+    const totalproductValeu = document.querySelector("#supplier-name");
     totalproductValeu.innerText = "";
     tbodyAllproducts.innerHTML = "";
     tbodyItemsproduct.innerHTML = "";
@@ -297,6 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//class="product-button" onclick="toggleItemOrder(${product.id})
 // const tbodydashboardTopClientproducts = document.querySelector(
 //   "#tbody-client-products"
 // );
