@@ -57,7 +57,7 @@ const createCircularProgress = (circularProgressSelector, progressValueSelector,
     progressStartValue++;
 
     progressValue.textContent = `${progressStartValue}%`;
-    circularProgress.style.background = `conic-gradient( #BA58EF ${progressStartValue * 3.6}deg ,#ffffff 0deg)`;
+    circularProgress.style.background = `conic-gradient( #991AE6 ${progressStartValue * 3.6}deg ,#c478f3 0deg)`;
 
     if (progressStartValue === progressEndValue) {
       clearInterval(progress);

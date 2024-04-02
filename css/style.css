@@ -7,17 +7,21 @@
     --color-warning: #ffbb55;
     --color-background: #ffffff;
     --color-shadow: #161616;
-    --color-onys: hsl(0, 0%, 24%);
+    --color-onys: #3d3d3d;
     --color-lavender-floral: #c478f3;
     --color-bar-column: #7402cb;
+    --color-roxo-profundo: #5a009e;
     --color-blue-violet: #991AE6;
-    --color-shadow-light: rgb(230, 230, 230);
-    --font-size-h1:2rem;
-    --font-size-h2:1.8rem;
-    --font-size-h3:1.5rem;
+    --color-light: #c7c4c4;
+    --font-family-kanit:"Kanit", sans-serif;
+    --font-family-manrope: "Manrope", sans-serif;
+    --font-size-1:1.5rem;
+    --font-size-2:1rem;
+    --font-size-3:0.8rem;
     --card-border-radius: 2rem;
-    --border-radius: 0.4rem;
-    --box-shadow-light: 0 1rem 2rem var(--color-shadow-light);
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 30px;
+    --box-shadow-light: 0 1rem 2rem var(--color-light);
     --box-shadow-dark: 0 1rem 2rem var();
     --box-shadow-violet: 0 0.5rem 1rem var(--color-blue-violet);
     /* background: linear-gradient(90deg, #3e3e3e 0%, #1b1b1b 100%); */
@@ -27,7 +31,7 @@
     --color-background: #181a1e;
     --color-background: #202528;
     --color-dark: #edeffd;
-    --color-dark-variant: #a3dbcc;
+    --color-dark-variant: #05802a;
     --color-ligth: rgba(0, 0, 0, 0.4);
     --box-shadow: 0 2rem 3rem var(--color-light)
 }
@@ -88,7 +92,7 @@ body {
     width: 100%;
     height: 100vh;
     gap: 2vh;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: 9vh 89vh;
     grid-template-areas: "header header"
                          "aside main";
@@ -103,7 +107,7 @@ header {
     width: 100%;
     grid-area: header;
     padding: 0px 40px 0px 40px;
-    background: var(--color-blue-violet);
+    background: linear-gradient(90deg, #c478f3 0%, #ffffff 100%);
 }
 .container-logo-asi-code{
     gap: 10px;
@@ -118,11 +122,11 @@ header {
     height: 60px;
 }
 .container-logo-asi-code  h1{
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-1);
     color: var(--color-info-light);
 }
 .container-logo-asi-code  span{
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-1);
     color: var(--color-phlox);
 }
 .header-profile {
@@ -137,13 +141,13 @@ header {
 }
 
 .header-profile .theme-toggler {
-    background: var(--color-light);
+    background: var(--color-background);
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 1.6rem;
     cursor: pointer;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-1);
 }
 
 .header-profile.theme-toggler span {
@@ -156,9 +160,9 @@ header {
 }
 
 .header-profile .theme-toggler span.active {
-    background: var(--color-lavender-floral);
+    background: var(--color-blue-violet);
     columns: white;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-1);
 }
 .header-profile .logo {
     display: flex;
@@ -190,6 +194,10 @@ header {
     border-radius: 50%;
     overflow: hidden;
 }
+.profile p {
+font-size: var(--font-size-2);
+font-family: var(--font-family-manrope);
+}
 
 aside {
     height: 100%;
@@ -205,21 +213,21 @@ aside .sidebar {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 3rem;
+    top: 0;
     gap: 10px;
-
+   
 }
 
 aside h3 {
-    font-size: 1rem;
+    font-size: var(--font-size-2);
     font-weight: 600;
 }
 
 aside .sidebar a {
     display: flex;
-    color: var(--color-lavender-floral);
+    color: var(--color-roxo-profundo);
     margin-left: 2rem;
-    gap: 1rem;
+    gap: 10px;
     align-items: center;
     position: relative;
     height: 3.7rem;
@@ -254,8 +262,8 @@ aside .sidebar a.active span {
 
 aside .sidebar a:hover {
     color: var(--color-blue-violet);
-    border-top-left-radius:var(--border-radius);
-    border-bottom-left-radius:var(--border-radius);
+    border-top-left-radius:var(--border-radius-1);
+    border-bottom-left-radius:var(--border-radius-1);
     background: linear-gradient(90deg, #c478f3 0%, #ffffff 100%);
 }
 
@@ -268,7 +276,7 @@ aside .sidebar .message-count {
     color: var(--color-blue-violet);
     padding: 2px 10px;
     font-size: 11px;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-1);
 }
 
 /*------------------------------main-----------------------------*/
@@ -297,12 +305,14 @@ main {
     justify-content: space-between;
 }
 .title-date  h1{
+font-size: var(--font-family-kanit);
+font-size: var(--font-size-1);
 color: var(--color-blue-violet);
 }
 .title-date .date {
     display: inline-block;
-    background: var(--color-light);
-    border-radius: var(--border-radius);
+    background: var(--color-background);
+    border-radius: var(--border-radius-1);
     padding: 0.3rem 1.3rem;
 }
 
@@ -332,12 +342,15 @@ color: var(--color-blue-violet);
 }
 
 .container-weekly h2 {
-    font-size: var(--font-size-h2);
+    font-family: var(--font-family-manrope);
+    font-size: var(--font-size-2);
     color: var(--color-onys);
 }
 
  .container-weekly h3 {
     margin-bottom: 0.8rem;
+    font-family: var(--font-family-manrope);
+    font-size: var(--font-size-3);
     color: var(--color-silver);
 }
 
@@ -381,8 +394,8 @@ color: var(--color-blue-violet);
 }
 
 .bar {
-    border-top-right-radius: var(--border-radius);
-    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius-1);
+    border-top-left-radius: var(--border-radius-1);
     width: 100%;
     background-color: var(--color-bar-column);
 
@@ -413,7 +426,7 @@ main .insigths {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(2, 1fr); 
-    gap: 10px; 
+    gap: 20px; 
 }
 
 main .insigths>div {
@@ -424,6 +437,7 @@ main .insigths>div {
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow-light);
     transition: all 300ms ease;
+    align-items: flex-start;
 }
 
 main .insigths>div:hover {
@@ -479,8 +493,15 @@ main .insigths h3 {
 }
 
 main .insigths h1 {
-    font-size: 1rem;
+    color:var(--color-onys);
+    font-family: var(--font-family-manrope);
+    font-size: var(--font-size-2);
 
+}
+main .insigths p {
+    font-size: var(--font-size-3);
+    color:var(--color-onys);
+    font-family: var(--font-family-manrope);
 }
 
 .progress {
@@ -503,7 +524,7 @@ main .insigths h1 {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: conic-gradient(#BA58EF 3.6deg, #ffffff 0deg);
+    background: conic-gradient(#00d123 3.6deg, #ee0707 0deg);
     align-items: center;
     justify-content: center;
     display: flex;
@@ -515,8 +536,8 @@ main .insigths h1 {
 .circular-progress-canceled::before{
     content: "";
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: var(--color-background);
 }
@@ -528,7 +549,7 @@ main .insigths .progress .progress-value-sales,
     position: absolute;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-back);
     top: 0;
     left: 0;
     height: 100%;
@@ -578,10 +599,6 @@ main .insigths .progress .number {
     align-items: center;
 }
 
-main .insigths small {
-    display: block;
-}
-
 .disabled-content {
     display: none;
 }
@@ -591,19 +608,15 @@ main .insigths small {
     background-color: transparent;
 }
 
-main .recent-products,
-main  {
-    margin-top: 1rem;
-    height: 100%;
-    width: 100%;
-    padding: 10px;
-}
+
 main .all-products {
     height: 100%;
     width: 100%;
+    gap: 10px;
 }
 main .all-products h1 {
-font-size: var(--font-size-h1);
+font-size: var(--font-size-1);
+font-family: var(--font-family-kanit);
 color: var(--color-blue-violet);
 }
 
@@ -612,6 +625,7 @@ color: var(--color-blue-violet);
     grid-template-columns: 1fr;
     grid-template-rows: 4fr 2fr 3fr;
     width: 100%;
+    padding: 10px;
     height: 100%;
     gap: 10px;
 }
@@ -647,28 +661,29 @@ main .all-products table {
     transition: all 300ms ease;
 }
 
-.button-all-products {
-    margin: 5px;
-    background-color: var(--color-blue-violet);
-    height: 40px;
-    border-radius: 30px;
-    width: 150px;
-    box-shadow: var(--box-shadow-violet);
-}
-
-.button-all-products:hover {
-    box-shadow: none;
-}
 
 .button-all-products button {
     width: 100%;
     height: 100%;
-    font-size: 1rem;
-    cursor: pointer;
-    color: var(--color-background);
+    margin: 5px;
+    background: var(--color-lavender-floral);
+    height: 40px;
     border-radius: 30px;
-    background-color: var(--color-phlox);
+    width: 150px;
+    font-weight: 600;
+    box-shadow: var(--box-shadow-violet);
+    font-size: var(--font-size-2);
+    cursor: pointer;
+    border-radius: var(--border-radius-2);
+    color: var(--color-background);
+    transition: all 300ms ease;
 }
+
+.button-all-products button:hover {
+    background: var(--color-blue-violet);
+    box-shadow: none;
+}
+
 
 main .table:hover,
 main .table:hover,
@@ -679,6 +694,8 @@ main .all-products table:hover {
 
 .recent-products thead th,
 .all-product-table thead th {
+    font-family: var(--font-family-manrope);
+    font-size: var(--font-size-3);
     background-color: var(--color-background);
     color: var(--color-onys);
     height: 40px;
@@ -694,8 +711,8 @@ main .all-products table:hover {
 }
 
 .recent-products tbody tr,
-.all-order-table tbody tr {
-    border-bottom: 1px solid #ddd;
+.all-product-table tbody tr {
+    border-bottom: 1px solid #991AE6;
 }
 
 .container-get-btn-all-get-btn-number {
@@ -703,7 +720,7 @@ main .all-products table:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .button-filter-product-number {
@@ -749,7 +766,7 @@ input::placeholder {
 }
 
 main .all-product-table {
-    margin-top: 2rem;
+    margin-top: 1rem;
     min-height: 20px;
     max-height: 150px;
     overflow: auto;
@@ -764,8 +781,10 @@ main .all-product-table {
 
 
 main table tbody td {
+    font-size: var(--font-size-3);
+    font-family: var(--font-family-manrope);
     background-color: var(--color-background);
-    height: 40px;
+    height: 30px;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -778,7 +797,7 @@ main .products-supplier {
     padding: 10px;
 }
 
-main .products-supplier H2 {
+main .products-supplier h2 {
    color: var(--color-onys);
 }
 
@@ -829,6 +848,9 @@ main .products-supplier table:hover {
 }
 
 main .supplier-all-product-table thead th {
+    color: var(--color-onys);
+    font-size: var(--font-size-3);
+    font-family: var(--font-family-manrope);
     background-color: var(--color-background);
     height: 40px;
     position: sticky;
@@ -841,10 +863,7 @@ main .supplier-all-product-table thead th {
     position: relative;
 }
 
-.supplier-all-product-table tbody tr {
-    border-bottom: 1px solid #ddd;
 
-}
 
 
 .products-button {
@@ -872,12 +891,14 @@ main .supplier-all-product-table thead th {
     flex-direction: column;
 }
 .add-products h1,.create-product h1{
-font-size: var(--font-size-h1);
+font-size: var(--font-size-1);
+font-family: var(--font-family-kanit);
 color: var(--color-blue-violet);
 height: auto;
 width: 100%;
 }
 .container-add-products{
+    margin-top: 1rem;
     min-height: 20px;
     max-height: 100px;
     overflow: auto;
@@ -906,6 +927,7 @@ width: 100%;
 }
 .container-add-products input[type="number"] {
     width: 50px;
+    background: transparent;
     text-align: center;
   }
 .container-add-products input[type="number"]::-webkit-inner-spin-button,
@@ -928,16 +950,16 @@ input[type="number"]::-webkit-outer-spin-button {
     color:var(--color-warning);
   }
   
-  .container-add-products button {
+  .container-add-products .decrement,.container-add-products .increment {
     padding: 5px 7px;
-    cursor: pointer;
     font-weight: 600;
+    font-family: var(--font-family-manrope);
     font-size: 1rem;
     border: none;
     background:transparent;
     color:var(--color-lavender-floral);
     border-radius: 3px;
-    transition: background-color 0.3s;
+    transition: all 300ms ease;
   }
   .container-add-products .btn-add-confirm {
     padding: 5px 15px;
@@ -945,14 +967,16 @@ input[type="number"]::-webkit-outer-spin-button {
     font-weight: 600;
     font-size: 1rem;
     border: none;
-    background:transparent;
-    color:var(--color-lavender-floral);
-    border-radius: 3px;
-    transition: background-color 0.3s;
+    margin: 5px;
+    background: var(--color-lavender-floral);
+    border-radius: var(--border-radius-1);
+    color:var(--color-background);
+    border-radius: var(--border-radius-2);
+    transition: all 300ms ease;
   }
   
-  .container-add-products button:hover {
-    color:var(--color-success);
+  .container-add-products .btn-add-confirm:hover {
+    background:var(--color-blue-violet);
   }   
 
 main .right {
@@ -1001,7 +1025,7 @@ main .right {
     gap: 1rem;
     margin-bottom: 0.7rem;
     padding: 5px;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-2);
     box-shadow: var(--box-shadow-light);
     transition: all 300ms ease;
 }
@@ -1047,38 +1071,50 @@ main .right {
     padding: 5px;
     align-items: center;
     min-height: 70px;
-    max-height: 70px;
+    height: 100%;
     overflow: auto;
     background: var(--color-background);
-    border-radius: var(--card-border-radius);
     text-align: center;
-    box-shadow: var(--box-shadow-light);
     transition: all 300ms ease;
 }
 .create-form-product{
-    margin: 0px 5px 0px 5px;
+    width: 100%;
+    height: 100%;
+  
 }
 .create-product .container-create-products-crud form{
     height: 100%;
     width: 100%;
     display: flex;
-    gap: 5px;
+    gap: 10px;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+}
+.form-group{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
 .container-create-products-crud label{
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: var(--font-size-2);
+    font-weight: 600;
     color: var(--color-onys);
+    border-bottom: 1px solid  #7402cb;
 }
-.container-create-products-crud  input[type="number"]{
-    width: 50px;
-    text-align: center;
-  }
 .container-create-products-crud   input[type="text"]{
-    width: auto;
+    width: 100%;
     text-align: center;
+    border: solid 1px #3d3d3d;
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow-light);
+    transition: all 300ms ease;
+
+}
+.container-create-products-crud  input[type="text"]:hover{
+    box-shadow: none;
 }
 .container-create-products-crud   input::placeholder{
  font-size: 0.9rem;
@@ -1086,8 +1122,51 @@ main .right {
  color: var(--color-onys);
  opacity: 60%;
 }
-
-
+.container-create-products-crud  input[type="number"]{
+    width: 30px;
+    text-align: center;
+    border: solid 1px #3d3d3d;
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow-light);
+    transition: all 300ms ease;
+  }
+  .container-create-products-crud  input[type="number"]:hover{
+    box-shadow: none;
+}
+.container-create-products-crud input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0; 
+} 
+.create-form-product select{
+    text-align: center;
+    font-weight: 600;
+    font-family: var(--font-family-manrope);
+    color: var(--color-onys);
+    border: solid 1px #3d3d3d;
+    border-radius: var(--border-radius-2);
+    background: var(--color-background);
+    cursor: pointer;
+    width: 80%;
+    font-size: var(--font-size-2);
+}
+.btn-confirm-create-product{
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    background: var(--color-lavender-floral);
+    margin: 5px;
+    border-radius: var(--border-radius-1);
+    color: var(--color-background);
+    border-radius: var(--border-radius-2);
+    transition: all 300ms ease;
+}
+.btn-confirm-create-product:hover{
+    background: var(--color-blue-violet);
+}
 
 @media (max-width:1470px) {
     .container {
@@ -1097,7 +1176,6 @@ main .right {
         grid-template-areas: " aside right"
             "aside main";
     }
-
     .right {
         display: flex;
         flex-direction: row-reverse;
@@ -1248,10 +1326,7 @@ main .right {
         font-size: 8px;
     }
 
-    main table tbody td {
-        font-size: 7px;
-
-    }
+ 
 
     .right {
         margin: 0;
