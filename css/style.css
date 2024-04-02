@@ -710,6 +710,7 @@ main .all-products table:hover {
     font-family: var(--font-family-manrope);
     font-size: var(--font-size-3);
     background-color: var(--color-background);
+    background: var(--color-white);
     color: var(--color-onys);
     height: 40px;
     position: sticky;
