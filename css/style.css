@@ -3,6 +3,10 @@
     --color-black-2: rgb(33, 33, 33);
     --color-silver: #CBCBCB;
     --color-red: #ec1818;
+    --color-aliexpress: #D32F2F;
+    --color-amazon: #FF9900;
+    --color-mercado-livre: #FFDB01;
+    --color-shopee: #FF4500;
     --color-success: #41f1b6;
     --color-warning: #ffbb55;
     --color-background: #ffffff;
@@ -75,8 +79,6 @@ body {
     color: var(--color-info-dark);
 }
 
-
-
 .primary {
     color: var(--color-phlox);
 }
@@ -93,8 +95,20 @@ body {
     color: var(--color-success);
 }
 
+.aliexpress {
+    color: var(--color-aliexpress);
+}
+.amazon{
+    color: var(--color-amazon);
+}
+.mercado-livre {
+    color: var(--color-mercado-livre);
+}
+.shopee{
+    color: var(--color-mercado-livre);
+}
 .warning {
-    color: var(--color-warning);
+    color: var(--color-shopee);
 }
 
 .container {
@@ -696,6 +710,32 @@ main .all-products table {
     background: var(--color-blue-violet);
     box-shadow: none;
 }
+.container-get-btn-all-get-btn-number {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button-filter-product-number {
+    height: 40px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-filter-product-number .material-symbols-outlined {
+    background-color: var(--color-lavender-floral);
+    color: var(--color-white);
+    border-radius: var(--border-radius-2);
+    cursor: pointer;
+}
+.button-filter-product-number .material-symbols-outlined:hover {
+    scale: 1.1;
+    background-color: var(--color-blue-violet);
+}
 
 
 main .table:hover,
@@ -724,20 +764,7 @@ main .all-products table:hover {
     position: relative;
 }
 
-.container-get-btn-all-get-btn-number {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
 
-.button-filter-product-number {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 #input-product {
     height: 80%;
@@ -758,16 +785,7 @@ input::placeholder {
     margin: 0;
 }
 
-.button-filter-product-number button {
-    background-color: transparent;
 
-}
-
-.button-filter-product-number .material-symbols-outlined {
-    background-color: transparent;
-    cursor: pointer;
-
-}
 
 .top-all-products .dateFilter input[type="date"] {
     background: transparent;
@@ -791,9 +809,10 @@ main .all-product-table {
 
 main table tbody td {
     font-size: var(--font-size-3);
+    border: 1px solid #c7c4c4;
     font-family: var(--font-family-manrope);
     background-color: var(--color-background);
-    height: 30px;
+    height: 40px;
     position: sticky;
     top: 0;
     z-index: 1;

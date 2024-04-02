@@ -2,57 +2,66 @@
   "products": [
     {
       "id": "1",
-      "name": "Product 1",
-      "value": 50,
-      "description": "This is product 1",
-      "amount":20,
-      "amountMinumum":6,
-      "supplier":"ASI CODE"
+      "name": "Dispositivo de rastreamento GPS",
+      "value": 150,
+      "description": "Modelo TK103B",
+      "amount":2,
+      "amountMinimum":2,
+      "supplier":"AMAZON"
   },
     {
       "id": "2",
-      "name": "Product 2",
-      "value":30,
-      "description": "This is product 2",
+      "name": "Unidade de controle",
+      "value":70,
+      "description": "Controlador de Rastreamento GPS GT06N da Concox",
       "amount":50,
-      "amountMinumum":10,
-      "supplier":"ASI CODE"
+      "amountMinimum":10,
+      "supplier":"MERCADO LIVRE"
   },
     {
       "id": "3",
-      "name": "Product 3",
-      "value": 45,
-      "description": "This is product 3",
-      "amount":50,
-      "amountMinumum":20,
-      "supplier":"ASI CODE"
+      "name": "Cabos de conexão",
+      "value": 200,
+      "description": "Cabo de alimentação: Cabo com conector OBD-II ou Cabo de alimentação DC com conector de 4 pinos",
+      "amount":20,
+      "amountMinimum":10,
+      "supplier":"SHOPEE"
   },
     {
       "id": "4",
-      "name": "Product 4",
-      "value": 50,
-      "description": "This is product 4",
-      "amount":10,
-      "amountMinumum":3,
-      "supplier":"ASI CODE"
+      "name": "Cabos de conexão",
+      "value": 70,
+      "description": "Cabo de comunicação serial RS-232 ou Cabo de comunicação USB para configuração",
+      "amount":50,
+      "amountMinimum":10,
+      "supplier":"AMAZON"
   },
     {
       "id": "5",
-      "name": "Product 5",
-      "value": 23,
-      "description": "This is product 5",
-      "amount":23,
-      "amountMinumum":11,
-      "supplier":"ASI CODE"
+      "name": "Antena GPS externa",
+      "value": 150,
+      "description": "Antena ativa GPS Magnética com conector SMA",
+      "amount":2,
+      "amountMinimum":2,
+      "supplier":"AMAZON"
   },
     {
       "id": "6",
-      "name": "Product 6",
-      "value": 76,
-      "description": "This is product 6",
-      "amount":20,
-      "amountMinumum":5,
-      "supplier":"ASI CODE"
+      "name": "Cabos de conexão",
+      "value":200,
+      "description": "Garmin DriveSmart 65",
+      "amount":22,
+      "amountMinimum":3,
+      "supplier":"ALIEXPRESS"
+  },
+    {
+      "id": "7",
+      "name": "Cabos de conexão",
+      "value":200,
+      "description": "omTom GO Comfort 6",
+      "amount":43,
+      "amountMinimum":3,
+      "supplier":"AMAZON"
   }
   ]
 }
