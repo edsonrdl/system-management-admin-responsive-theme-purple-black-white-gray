@@ -846,15 +846,17 @@ main .products-supplier h2 {
 }
 
 #supplier-name {
-    font-size: 1rem;
+    font-size:var(--font-size-2);
+    font-family: var(--font-family-manrope);
     margin: 5px;
-    color: var(--color-dim-gray);
+    font-weight: 600;
+    color: var(--color-back);
 }
 
 .supplier-description {
     margin-top: 2rem;
     min-height: 20px;
-    max-height: 70px;
+     height: auto;
     overflow: auto;
     background: transparent;
     width: 100%;

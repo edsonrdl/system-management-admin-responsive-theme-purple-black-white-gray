@@ -143,7 +143,7 @@ const allproducts = async () => {
     tbodyAllproducts.innerHTML = "";
 
     allproductsValidate.forEach((product) => {
-      let suppliers=product.supplier ;
+      let suppliers = product.supplier;
       const tr = document.createElement("tr");
       const trContent = `
    <td>${product.id}</td>
@@ -153,16 +153,16 @@ const allproducts = async () => {
    <td>${product.amount}</td>
    <td>${product.amountMinimum}</td>
    <td  onclick="toggleSuppler(${suppliers.id})" class="${
-    suppliers.name === "ALIEXPRESS"
-        ? "aliexpress"
-        : suppliers.name === "AMAZON"
-        ? "amazon"
-        : suppliers.name === "MERCADO LIVRE"
-        ? "mercado-livre"
-        : suppliers.name === "SHOPEE"
-        ? "shopee"
-        : "warning"
-    }">${suppliers.name}</td>`;
+        suppliers.name === "ALIEXPRESS"
+          ? "aliexpress"
+          : suppliers.name === "AMAZON"
+          ? "amazon"
+          : suppliers.name === "MERCADO LIVRE"
+          ? "mercado-livre"
+          : suppliers.name === "SHOPEE"
+          ? "shopee"
+          : "warning"
+      }">${suppliers.name}</td>`;
       tr.innerHTML = trContent;
       tbodyAllproducts.appendChild(tr);
     });
@@ -173,71 +173,31 @@ productsAllbtn.addEventListener("click", allproducts);
 const toggleSuppler = async (id) => {
   const idSupplier = id;
   const allproducts = await fetchproducts();
-  
-  console.log("allproducts"+ allproducts);
+  const allproductsValidate = allproducts.products;
 
-  if (allproducts && idSupplier) {
-    const allproductsValidate = allproducts.products;
-    allproductsValidate.forEach(async (product) => {
-      let supplier=product.supplier;
-
-      const productItems = allproductsValidate.find(
-        (product) => product.id === idSupplier
-      );
-      
-      const itens = productItems.itens;
-  
-      const totalproductValue = sumItemValues(productItems.itens);
-      const formattedTotal = formatCurrency(totalproductValue);
-      loaditemsproductClient(itens, formattedTotal);
-
-
-      });
-
+  allproductsValidate.forEach(async (product) => {
    
-  }
-};
-const formatCurrency = (value) => {
-  return new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(value);
-};
+    let supplier = product.supplier;
 
-const sumItemValues = (items) => {
-  return items.reduce((total, item) => {
-    return total + parseFloat(item.value) * item.quantity;
-  }, 0);
+    if(supplier.id==idSupplier){
+
+      loaditemsproductClient(supplier);
+    }
+  });
 };
 
-const tbodyItemsproduct = document.querySelector("#tbody-supplier-description");
+const tbodySupplierDescription = document.querySelector("#tbody-supplier-description");
+function loaditemsproductClient(supplier) {
+      
+      tbodySupplierDescription.innerHTML = "";
 
-function loaditemsproductClient(ItemsproductClient, totalValueproduct) {
-  console.log(ItemsproductClient);
-  console.log(totalValueproduct);
-  tbodyItemsproduct.innerHTML = "";
-
-  if (ItemsproductClient.length > 0) {
-    for (const itemproduct of ItemsproductClient) {
       const totalproductValeu = document.querySelector("#supplier-name");
-      totalproductValeu.innerText = `${ItemsproductClient.name}`;
-
+      totalproductValeu.innerText = `${supplier.name}`;
       const tr = document.createElement("tr");
       const trContent = `
-        <td>${ItemsproductClient.description}</td>`;
+        <td>${supplier.description}</td>`;
       tr.innerHTML = trContent;
-      tbodyItemsproduct.appendChild(tr);
-    }
-  } else {
-    const tr = document.createElement("tr");
-    const trContent = `
-      <td>Vazio</td>
-      <td>Vazio</td>
-      <td>Vazio</td>
-      <td>Total do pedido : vazio</td>`;
-    tr.innerHTML = trContent;
-    tbodyItemsproduct.appendChild(tr);
-  }
+      tbodySupplierDescription.appendChild(tr);
 }
 
 const searchproductNumber = async () => {
@@ -258,9 +218,10 @@ const searchproductNumber = async () => {
 function productsearcherFunction(productsearcher) {
   if (productsearcher) {
     const totalproductValeu = document.querySelector("#supplier-name");
+    let suppliers = productsearcher.supplier;
     totalproductValeu.innerText = "";
     tbodyAllproducts.innerHTML = "";
-    tbodyItemsproduct.innerHTML = "";
+    tbodySupplierDescription.innerHTML = "";
     const tr = document.createElement("tr");
     const trContent = `
     <td>${productsearcher.id}</td>
@@ -270,16 +231,16 @@ function productsearcherFunction(productsearcher) {
     <td>${productsearcher.amount}</td>
     <td>${productsearcher.amountMinimum}</td>
      <td class="${
-      productsearcher.supplier === "ALIEXPRESS"
+      suppliers.name === "ALIEXPRESS"
          ? "aliexpress"
-         : productsearcher.supplier === "AMAZON"
+         : suppliers.name === "AMAZON"
          ? "amazon"
-         : productsearcher.supplier === "MERCADO LIVRE"
+         : suppliers.name === "MERCADO LIVRE"
          ? "mercado-livre"
-         : productsearcher.supplier === "SHOPEE"
+         : suppliers.name === "SHOPEE"
          ? "shopee"
          : "warning"
-     }">${productsearcher.supplier}</td>`;
+     }">${suppliers.name}</td>`;
     tr.innerHTML = trContent;
     tbodyAllproducts.appendChild(tr);
     console.log(tbodyAllproducts);
@@ -303,38 +264,3 @@ document.addEventListener("DOMContentLoaded", function () {
     quantityInput.value = currentValue + 1;
   });
 });
-
-//class="product-button" onclick="toggleItemOrder(${product.id})
-// const tbodydashboardTopClientproducts = document.querySelector(
-//   "#tbody-client-products"
-// );
-
-// const dashboardTopClientproducts = async () => {
-//   const topClientproducts = await fetchproducts();
-
-//   if (topClientproducts) {
-//     const topClientproductValidate = topClientproducts.topClientOrdes;
-//     tbodydashboardTopClientproducts.innerHTML = "";
-
-//     topClientproductValidate.forEach((topClientproduct) => {
-//       const numeroTelefone = topClientproduct.numberPhone.toString();
-//       const numeroFormatado = `+1 ${numeroTelefone.slice(
-//         1,
-//         4
-//       )}-${numeroTelefone.slice(4, 7)}-${numeroTelefone.slice(7)}`;
-//       const tr = document.createElement("tr");
-//       const trContent = `
-//         <td>${topClientproduct.client}</td>
-//         <td>${numeroFormatado}</td>
-//         <td>${topClientproduct.email}</td>
-//         <td>${topClientproduct.amount}</td>
-//         `;
-//       tr.innerHTML = trContent;
-//       tbodydashboardTopClientproducts.appendChild(tr);
-//     });
-//   } else {
-//     console.error("Failed to load products.");
-//   }
-// };
-
-// dashboardTopClientproducts();
