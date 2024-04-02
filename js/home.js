@@ -18,7 +18,7 @@ const sideMenu =document.querySelector("aside");
     themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
  })
 
- function atualizarData() {
+ function updateData() {
   const agora = new Date();
   const dia = agora.getDate();
   const mes = agora.getMonth() + 1; 
@@ -26,11 +26,9 @@ const sideMenu =document.querySelector("aside");
 
   const formatoData = `${dia < 10 ? '0' : ''}${dia}/${mes < 10 ? '0' : ''}${mes}/${ano}`;
 
-  document.getElementById('data-atual').innerText = formatoData;
+  document.getElementById('current-date').innerText = formatoData;
 }
-
-
-atualizarData();
+updateData();
  
  function showContentMain(contentId) {
    const allContentMain = document.querySelectorAll('.main-contant');
@@ -71,7 +69,7 @@ createCircularProgress(".circular-progress-income", ".progress-value-income", va
 createCircularProgress(".circular-progress-canceled", ".progress-value-canceled", valueProgressCanceled);
 
  
-const productToday = 'productsToday.json';
+const productToday = 'products.json';
 const tbodyproductsRecentToday = document.querySelector('#tbody-products-today');
 
 const fetchproducts = async () => {
