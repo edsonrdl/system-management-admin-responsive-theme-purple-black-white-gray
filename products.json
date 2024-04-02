@@ -7,7 +7,11 @@
       "description": "Modelo TK103B",
       "amount":2,
       "amountMinimum":2,
-      "supplier":"AMAZON"
+      "supplier":{
+        "id":"4",
+        "name":"AMAZON",
+        "description":"Fornecedor com acesso ao serviço da alexa autostock"
+      }
   },
     {
       "id": "2",
@@ -16,7 +20,11 @@
       "description": "Controlador de Rastreamento GPS GT06N da Concox",
       "amount":50,
       "amountMinimum":10,
-      "supplier":"MERCADO LIVRE"
+      "supplier":{
+        "id":"1",
+        "name":"MERCADO LIVRE",
+        "description":"Fornecedor sem acesso ao serviço da alexa"
+      }
   },
     {
       "id": "3",
@@ -25,7 +33,11 @@
       "description": "Cabo de alimentação: Cabo com conector OBD-II ou Cabo de alimentação DC com conector de 4 pinos",
       "amount":20,
       "amountMinimum":10,
-      "supplier":"SHOPEE"
+      "supplier":{
+        "id":"2",
+        "name":"SHOPEE",
+        "description":"Fornecedor sem acesso ao serviço da alexa"
+      }
   },
     {
       "id": "4",
@@ -34,7 +46,11 @@
       "description": "Cabo de comunicação serial RS-232 ou Cabo de comunicação USB para configuração",
       "amount":50,
       "amountMinimum":10,
-      "supplier":"AMAZON"
+      "supplier":{
+        "id":"4",
+        "name":"AMAZON",
+        "description":"Fornecedor sem acesso ao serviço da alexa"
+      }
   },
     {
       "id": "5",
@@ -43,7 +59,11 @@
       "description": "Antena ativa GPS Magnética com conector SMA",
       "amount":2,
       "amountMinimum":2,
-      "supplier":"AMAZON"
+      "supplier":{
+        "id":"4",
+        "name":"AMAZON",
+        "description":"Fornecedor sem acesso ao serviço da alexa"
+      }
   },
     {
       "id": "6",
@@ -52,7 +72,11 @@
       "description": "Garmin DriveSmart 65",
       "amount":22,
       "amountMinimum":3,
-      "supplier":"ALIEXPRESS"
+      "supplier":{
+        "id":"3",
+        "name":"ALIEXPRESS",
+        "description":"Fornecedor sem acesso ao serviço da alexa"
+      }
   },
     {
       "id": "7",
@@ -61,7 +85,11 @@
       "description": "omTom GO Comfort 6",
       "amount":43,
       "amountMinimum":3,
-      "supplier":"AMAZON"
+      "supplier":{
+        "id":"4",
+        "name":"AMAZON",
+        "description":"Fornecedor sem acesso ao serviço da alexa"
+      }
   }
   ]
 }

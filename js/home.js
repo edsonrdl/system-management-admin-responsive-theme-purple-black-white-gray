@@ -151,16 +151,16 @@ const allproducts = async () => {
    <td>${product.description}</td>
    <td>${product.amount}</td>
    <td>${product.amountMinimum}</td>
-    <td onclick="toggleSuppler(${product.supplier}) class="${
+   <td  onclick="toggleSuppler(${product.supplier})" class="${
       product.supplier === "ALIEXPRESS"
-        ? "aliexpress supplier-button"
+        ? "aliexpress"
         : product.supplier === "AMAZON"
-        ? "amazon supplier-button"
+        ? "amazon"
         : product.supplier === "MERCADO LIVRE"
-        ? "mercado-livre supplier-button"
+        ? "mercado-livre"
         : product.supplier === "SHOPEE"
-        ? "shopee supplier-button"
-        : "warning supplier-button"
+        ? "shopee"
+        : "warning"
     }">${product.supplier}</td>`;
       tr.innerHTML = trContent;
       tbodyAllproducts.appendChild(tr);
@@ -169,15 +169,15 @@ const allproducts = async () => {
 };
 productsAllbtn.addEventListener("click", allproducts);
 
-const toggleSuppler = async (idproductClient) => {
-  const idproduct = idproductClient;
+const toggleSuppler = async (id) => {
+  const idSupplier = id;
   const allproductsItems = await fetchproducts();
 
-  if (allproductsItems && idproduct) {
+  if (allproductsItems && idSupplier) {
     const allproductsItemsValidate = allproductsItems.products;
 
     const productItems = allproductsItemsValidate.find(
-      (product) => product.id === idproduct
+      (product) => product.id === idSupplier
     );
     const itens = productItems.itens;
 

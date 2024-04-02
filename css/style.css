@@ -96,19 +96,29 @@ body {
 }
 
 .aliexpress {
+    cursor: pointer;
     color: var(--color-aliexpress);
 }
 .amazon{
+    cursor: pointer;
     color: var(--color-amazon);
 }
 .mercado-livre {
+    cursor: pointer;
     color: var(--color-mercado-livre);
 }
 .shopee{
+    cursor: pointer;
     color: var(--color-mercado-livre);
 }
 .warning {
     color: var(--color-shopee);
+}
+.aliexpress:hover,
+.amazon:hover,
+.mercado-livre:hover,
+.shopee:hover,.warning:hover {
+    color: var(--color-roxo-profundo);
 }
 
 .container {
@@ -731,6 +741,7 @@ main .all-products table {
     color: var(--color-white);
     border-radius: var(--border-radius-2);
     cursor: pointer;
+    box-shadow: var(--box-shadow-violet);
 }
 .button-filter-product-number .material-symbols-outlined:hover {
     scale: 1.1;
@@ -889,24 +900,6 @@ main .supplier-description thead th {
 .supplier-description tbody {
     overflow-y: auto;
     position: relative;
-}
-
-.supplier-button {
-    cursor: pointer;
-    color: var(--color-secundary);
-}
-
-.supplier-button:hover {
-    color: var(--color-secundary-hover);
-
-}
-
-.supplier-button {
-    cursor: pointer;
-}
-
-.supplier-button:hover {
-    color: var(--color-blue-violet);
 }
 
 .add-products,.create-product{
