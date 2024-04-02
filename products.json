@@ -1,188 +1,58 @@
 {
   "products": [
     {
-      "id":23,
-      "client": "Gps",
-      "numberOrder": 856,
-      "status": "Concluído",
-      "itens":[
-        {
-          "name":"Notebook",
-          "value":"1800",
-          "quantity":1
-          
-        }
-      ]
-    },
-    {
-      "id":3,
-      "client": "Cabo",
-      "numberOrder": 569,
-      "status": "Concluído",
-      "itens":[
-        {
-          "name":"Televisão",
-          "value":"2300",
-          "quantity":1
-          
-        }
-      ]
-    },
-    {
-      "id":54,
-      "client": "Antena",
-      "numberOrder": 423,
-      "status": "Concluído",
-      "itens":[
-        {
-          "name":"Câmera fotográfica",
-          "value":"800",
-          "quantity":1
-          
-        }
-      ]
-    },
-    {
-      "id":78,
-      "client": "Sensor",
-      "numberOrder": 212,
-      "status": "Pendente",
-      "itens":[
-        {
-          "name":"Câmera fotográfica",
-          "value":"800",
-          "quantity":1
-          
-        },{
-          "name":"Lente de Câmera fotográfica",
-          "value":"200",
-          "quantity":3
-
-        }
-      ]
-    },
-    {
-      "id":787,
-      "client": "Sensor",
-      "numberOrder": 645,
-      "status": "Concluído",
-      "itens":[
-        {
-          "name":"Telefone",
-          "value":"2800",
-          "quantity":1
-          
-        },{
-          "name":"Fone de ouvido",
-          "value":"80",
-          "quantity":1
-
-        }
-      ]
-    },
-    {
-      "id":4,
-      "client": "Sensor",
-      "numberOrder": 432,
-      "status": "Concluído",
-      "itens":[
-        {
-          "name":"Telefone",
-          "value":"2800",
-          "quantity":1
-          
-        }
-      ]
-    },
-    {
-      "id":3,
-      "client": "Sensor",
-      "numberOrder": 423,
-      "status": "Cancelado",
-      "itens":[
-        {
-          "name":"Telefone",
-          "value":"2800",
-          "quantity":1
-          
-        }
-      ]
-    },
-    {
-      "id":27,
-      "client": "Sensor",
-      "numberOrder": 733,
-      "status": "Concluído",
-      "itens":[
-        {
-          "name":"Cafeteira",
-          "value":"600",
-          "quantity":1
-          
-        }
-      ]
-    }
-  ],
-  "topClientOrdes":[
-    {
-    "client": "Alice",
-    "numberPhone": "11234567890",
-    "email": "alice@example.com",
-    "amount": 20
+      "id": "1",
+      "name": "Product 1",
+      "value": 50,
+      "description": "This is product 1",
+      "amount":20,
+      "amountMinumum":6,
+      "supplier":"ASI CODE"
   },
     {
-    "client": "Bob",
-    "numberPhone":"19876543210",
-    "email": "bob@example.com",
-    "amount": 18
+      "id": "2",
+      "name": "Product 2",
+      "value":30,
+      "description": "This is product 2",
+      "amount":50,
+      "amountMinumum":10,
+      "supplier":"ASI CODE"
   },
     {
-    "client": "Charlie",
-    "numberPhone":"15551234567",
-    "email": "charlie@example.com",
-    "amount": 17
+      "id": "3",
+      "name": "Product 3",
+      "value": 45,
+      "description": "This is product 3",
+      "amount":50,
+      "amountMinumum":20,
+      "supplier":"ASI CODE"
   },
     {
-    "client": "Diego",
-    "numberPhone":"15559834457",
-    "email": "diego@example.com",
-    "amount": 17
+      "id": "4",
+      "name": "Product 4",
+      "value": 50,
+      "description": "This is product 4",
+      "amount":10,
+      "amountMinumum":3,
+      "supplier":"ASI CODE"
   },
     {
-    "client": "Pedro",
-    "numberPhone":"15552338857",
-    "email": "pedro@example.com",
-    "amount": 17
+      "id": "5",
+      "name": "Product 5",
+      "value": 23,
+      "description": "This is product 5",
+      "amount":23,
+      "amountMinumum":11,
+      "supplier":"ASI CODE"
   },
     {
-    "client": "Lucas",
-    "numberPhone":"15556734457",
-    "email": "lucas@example.com",
-    "amount": 16
-  },
-    {
-    "client": "Joice",
-    "numberPhone":"15551234457",
-    "email": "joice@example.com",
-    "amount": 11
-  },
-    {
-    "client": "Eduardo",
-    "numberPhone":"15555634457",
-    "email": "eduardo@example.com",
-    "amount":7
-  },
-    {
-    "client": "Alice",
-    "numberPhone":"15559834457",
-    "email": "alice@example.com",
-    "amount":3
-  },
-    {
-    "client": "Miguel",
-    "numberPhone":"15559834457",
-    "email": "miguel@example.com",
-    "amount":3
+      "id": "6",
+      "name": "Product 6",
+      "value": 76,
+      "description": "This is product 6",
+      "amount":20,
+      "amountMinumum":5,
+      "supplier":"ASI CODE"
   }
   ]
 }
