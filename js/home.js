@@ -98,7 +98,7 @@ const tbodyproductsRecentToday = document.querySelector(
   "#tbody-products-today"
 );
 
-const fetchproducts = async () => {
+const getAllProducts = async () => {
   try {
     const response = await fetch(productToday);
     if (!response.ok) {
@@ -113,7 +113,7 @@ const fetchproducts = async () => {
 };
 
 const dashboardproductsToday = async () => {
-  const products = await fetchproducts();
+  const products = await getAllProducts();
 
   if (products) {
     const productValidate = products.products;
@@ -137,7 +137,7 @@ const dashboardproductsToday = async () => {
 dashboardproductsToday();
 
 const allproducts = async () => {
-  const allproducts = await fetchproducts();
+  const allproducts = await getAllProducts();
   if (allproducts) {
     const allproductsValidate = allproducts.products;
     tbodyAllproducts.innerHTML = "";
@@ -162,7 +162,12 @@ const allproducts = async () => {
           : suppliers.name === "SHOPEE"
           ? "shopee"
           : "warning"
-      }">${suppliers.name}</td>`;
+      }">${suppliers.name}</td>
+      <td><span onclick="putProduct(${product.id})" class="material-symbols-outlined btn-edit-product">
+      edit</span></td>
+      <td><span onclick="putProduct(${product.id})" class="material-symbols-outlined btn-delete-product">
+      delete</span></td>
+      `;
       tr.innerHTML = trContent;
       tbodyAllproducts.appendChild(tr);
     });
@@ -172,7 +177,7 @@ productsAllbtn.addEventListener("click", allproducts);
 
 const toggleSuppler = async (id) => {
   const idSupplier = id;
-  const allproducts = await fetchproducts();
+  const allproducts = await getAllProducts();
   const allproductsValidate = allproducts.products;
 
   allproductsValidate.forEach(async (product) => {
@@ -203,7 +208,7 @@ function loaditemsproductClient(supplier) {
 const searchproductNumber = async () => {
   const inputproduct = document.getElementById("input-product");
   const idProduct = inputproduct.value;
-  const allproductsResponse = await fetchproducts();
+  const allproductsResponse = await getAllProducts();
 
   if (allproductsResponse && idProduct) {
     const allproducts = allproductsResponse.products;
@@ -248,19 +253,38 @@ function productsearcherFunction(productsearcher) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const decrementButton = document.querySelector(".decrement");
-  const incrementButton = document.querySelector(".increment");
-  const quantityInput = document.getElementById("quantity");
+  const decrementAmountMinumum = document.querySelector(".decrement-amountMinimum");
+  const incrementAmountMinumum= document.querySelector(".increment-amountMinimum");
+  const quantityInput = document.getElementById("amountMinimum");
 
-  decrementButton.addEventListener("click", function () {
+  decrementAmountMinumum.addEventListener("click", function () {
     let currentValue = parseInt(quantityInput.value);
     if (currentValue > 0) {
       quantityInput.value = currentValue - 1;
     }
   });
 
-  incrementButton.addEventListener("click", function () {
+  incrementAmountMinumum.addEventListener("click", function () {
     let currentValue = parseInt(quantityInput.value);
     quantityInput.value = currentValue + 1;
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const decrementAmount= document.querySelector(".decrement-amount");
+  const incrementAmount = document.querySelector(".increment-amount");
+  const quantityInput = document.getElementById("amount");
+
+  decrementAmount.addEventListener("click", function () {
+    let currentValue = parseInt(quantityInput.value);
+    if (currentValue > 0) {
+      quantityInput.value = currentValue - 1;
+    }
+  });
+
+  incrementAmount.addEventListener("click", function () {
+    let currentValue = parseInt(quantityInput.value);
+    quantityInput.value = currentValue + 1;
+  });
+});
+
