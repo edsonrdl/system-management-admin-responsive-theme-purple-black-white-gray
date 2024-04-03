@@ -235,7 +235,7 @@ function productsearcherFunction(productsearcher) {
     <td>${productsearcher.description}</td>
     <td>${productsearcher.amount}</td>
     <td>${productsearcher.amountMinimum}</td>
-     <td class="${
+     <td onclick="toggleSuppler(${suppliers.id})" class="${
       suppliers.name === "ALIEXPRESS"
          ? "aliexpress"
          : suppliers.name === "AMAZON"
@@ -245,7 +245,12 @@ function productsearcherFunction(productsearcher) {
          : suppliers.name === "SHOPEE"
          ? "shopee"
          : "warning"
-     }">${suppliers.name}</td>`;
+     }">${suppliers.name}</td>
+     <td><span onclick="putProduct(${productsearcher.id})" class="material-symbols-outlined btn-edit-product">
+     edit</span></td>
+     <td><span onclick="putProduct(${productsearcher.id})" class="material-symbols-outlined btn-delete-product">
+     delete</span></td>
+     `;
     tr.innerHTML = trContent;
     tbodyAllproducts.appendChild(tr);
     console.log(tbodyAllproducts);
