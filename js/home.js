@@ -4,6 +4,8 @@ const closeBtn = document.querySelector("#close-btn");
 const themeToggler = document.querySelector(".theme-toggler");
 const tbodyAllproducts = document.querySelector("#tbody-products-all");
 const productsAllbtn = document.querySelector("#btn-all-products");
+const deleteProductBtn = document.querySelector("#btn-delete-product");
+const titleCreateDeleteUpdateProduct = document.querySelector(".title-create-delete-update-product");
 
 menuBtn.addEventListener("click", () => {
   sideMenu.style.display = "block";
@@ -93,27 +95,32 @@ createCircularProgress(
   valueProgressCanceled
 );
 
-const productToday = "products.json";
-const tbodyproductsRecentToday = document.querySelector(
-  "#tbody-products-today"
-);
+// const productToday = "products.json";
+const url = "http://localhost:8080/product/products";
+const tbodyProductsRecentToday = document.querySelector("#tbody-products-today");
 
 const getAllProducts = async () => {
   try {
-    const response = await fetch(productToday);
+    const response = await fetch(url, {
+      method: 'GET'
+    });
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(`Erro HTTP! Status: ${response.status}`);
     }
     const products = await response.json();
     return products;
   } catch (error) {
-    console.error("Error fetching products:", error);
+    console.error("Erro ao buscar produtos:", error);
     return null;
   }
 };
 
+
+
+
 const dashboardproductsToday = async () => {
   const products = await getAllProducts();
+  console.log(products);
 
   if (products) {
     const productValidate = products.products;
@@ -293,3 +300,45 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+const deleteProduct =function(event){
+  const idProduct = event.currentTarget;
+  const deleteProductssd = async () => {
+    const product = await getProduct();
+    if (allproducts) {
+      const allproductsValidate = allproducts.products;
+      tbodyAllproducts.innerHTML = "";
+  
+      allproductsValidate.forEach((product) => {
+        let suppliers = product.supplier;
+        const tr = document.createElement("tr");
+        const trContent = `
+     <td>${product.id}</td>
+     <td>${product.name}</td>
+     <td>${product.value}</td>
+     <td>${product.description}</td>
+     <td>${product.amount}</td>
+     <td>${product.amountMinimum}</td>
+     <td  onclick="toggleSuppler(${suppliers.id})" class="${
+          suppliers.name === "ALIEXPRESS"
+            ? "aliexpress"
+            : suppliers.name === "AMAZON"
+            ? "amazon"
+            : suppliers.name === "MERCADO LIVRE"
+            ? "mercado-livre"
+            : suppliers.name === "SHOPEE"
+            ? "shopee"
+            : "warning"
+        }">${suppliers.name}</td>
+        <td><span onclick="putProduct(${product.id})" class="material-symbols-outlined btn-edit-product">
+        edit</span></td>
+        <td><span onclick="putProduct(${product.id})" class="material-symbols-outlined btn-delete-product">
+        delete</span></td>
+        `;
+        tr.innerHTML = trContent;
+        tbodyAllproducts.appendChild(tr);
+      });
+    }
+  };
+}
+
+deleteProductBtn.addEventListener("click", deleteProduct);
