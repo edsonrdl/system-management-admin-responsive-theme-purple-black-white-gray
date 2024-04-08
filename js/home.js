@@ -96,7 +96,7 @@ createCircularProgress(
 );
 
 // const productToday = "products.json";
-const url = "http://localhost:8080/product/products";
+const url = "products.json";
 const tbodyProductsRecentToday = document.querySelector("#tbody-products-today");
 
 const getAllProducts = async () => {
